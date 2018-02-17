@@ -36,4 +36,4 @@ Script in Python 3 to facilitate the add to cart & checkout on sites that use Sh
 <p>Run it, follow the instructions and you are good to go.</p>
 <p><b> Enjoy, feel free to improve this script, that is not open source for nothing !</b></p>
 <p>
-<h2> If you have any questions - <a href="https://www.twitter.com/alexxbessis">DM ME (and no dumb questions please)</a> on Twitter
+<h2> If you have any questions - <a href="https://www.twitter.com/alexxbessis">DM ME</a> on Twitter (and no dumb questions please).
