@@ -1,5 +1,5 @@
 # ShopifyBot
-Script in Python 3 to facilitate the add to cart & checkout on site that use Shopify.
+Script in Python 3 to facilitate the add to cart & checkout on sites that use Shopify.
 <p>
 <p><strong> <i>WILL BE UPDATED WITH THE TIME. <i></p></strong>
 
