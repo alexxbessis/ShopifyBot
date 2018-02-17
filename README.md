@@ -29,7 +29,7 @@ Script in Python 3 to facilitate the add to cart & checkout on sites that use Sh
 </li>
 <li>
 (You're now on the right folder) - after, type :</ol>
-<pre><code>python3 YME.py
+<pre><code>python3 main.py
 </code></pre>
 <p>If you have a message saying "No module named 'requests' or any other modules needed. Type :
 <pre><code>pip3 install requests</code></pre></p>
