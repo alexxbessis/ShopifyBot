@@ -18,23 +18,23 @@ while True:
         global URL
         print(getTime())
         print('')
-        print('Choisis une option:')
-        print('1. Coller un link Shopify')
-        print('2. Rechercher un produit avec keywords')
-        choice = input('Tape le numero que tu veux : ')
+        print('Choose an option :')
+        print('1. Paste a Shopify link')
+        print('2. Search a product with keywords')
+        choice = input('Type the the number you want : ')
         while (choice != '11') and (choice != '22'):
             if choice == '1':
-                URL = input('Colle un lien Shopify : ')
+                URL = input('Paste a Shopify link ')
                 if '?' in URL:
                     URL, y, z = URL.partition('?')
             elif choice == '2':
-                website = input('Sur quel site tu veux cop ? Seulement taper nom de domaine (ex: kith.com) ')
+                website = input('On which site you want to cop ? Only type the domain name (eg: kith.com) ')
                 keyword1 = input('Keyword 1 : ')
                 keyword2 = input('Keyword 2 : ')
-                keyword3 = input('Keyword 3 ou laisse un vide : ')
-                keyword4 = input('Keyword 4 ou laisse un vide : ')
-                keyword5 = input('Keyword 5 ou laisse un vide : ')
-                keyword6 = input('Keyword 6 ou laisse un vide : ')
+                keyword3 = input('Keyword 3 or leave a blank : ')
+                keyword4 = input('Keyword 4 or leave a blank : ')
+                keyword5 = input('Keyword 5 or leave a blank : ')
+                keyword6 = input('Keyword 6 or leave a blank : ')
                 s = requests.Session()
                 f = s.get('https://'+website+'/sitemap_products_1.xml')
                 soup1 = BeautifulSoup(f.text, 'lxml')
@@ -49,7 +49,7 @@ while True:
                                         if keyword6.lower() in URL:
                                             print('')
                                             print('Product url: {}'.format(URL))
-                                            print("(!)Si le lien est incorrect j'ai fais une connerie(!)")
+                                            print("(!)If the link is incorrect, then you made a mistake (!)")
                                             return URL
 
             break
@@ -112,19 +112,19 @@ while True:
     formatData()
     def ATC():
         print('')
-        choice = input('Acheter ? (y/n) ')
+        choice = input('Buy ? (y/n) ')
         while (choice != 'y1') and (choice != 'n1'):
             if choice == 'y':
-                size = input('Quelle taille ? ')
-                quantity = input('Quelle quantité ? ')
+                size = input('Size ? ')
+                quantity = input('Quantity ? ')
                 try:
                     variant = soup.find(text=size).findPrevious('id').text
                 except AttributeError:
                     print('')
-                    print("(!)J'ai pas trouvé la taille, sois sur de mettre la taille sur le format comme la liste ci-dessus (ex: Si la liste dit Medium, ecris medium, pas juste M) MAJUSCULE//MINUSULE IMPORTE (!)")
+                    print("(!)Didnt found the size wanted, make sure to put the size as the list is saying (eg: If the list says Medium, then type medium, not just M) CAPS//SMALL IS IMPORTANT (!)")
                     print('')
                     print("Try Again...")
-                    size = input('Quelle taille ?')
+                    size = input('Size ?')
                     variant = soup.find(text=size).findPrevious('id').text
                 url = urlparse(URL)
                 baseurl = 'https://'+url.netloc+'/cart/'
@@ -133,12 +133,12 @@ while True:
                 driver.get(BD)
                 [getURL(), getSoup(), getItem(), getSize(), getStock(), getPrice(), getVariants(), getTotal(), formatData(), ATC()]
             elif choice == 'n':
-                    choice1 = input('Tu veux chercher un autre produit ? (y/n) ')
+                    choice1 = input('Do you want to seach another product ? (y/n) ')
                     while (choice1 != 'yo') and (choice1 != 'no'):
                         if choice1 == 'y':
                             [getURL(), getSoup(), getItem(), getSize(), getStock(), getPrice(), getVariants(), getTotal(), formatData(), ATC()]
                         else:
-                            print('Ok, je ferme le shopify checker')
+                            print('Ok, i close the shopify checker')
                             sys.exit()
 
     ATC()
