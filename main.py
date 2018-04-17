@@ -24,7 +24,7 @@ while True:
         choice = input('Type the the number you want : ')
         while (choice != '11') and (choice != '22'):
             if choice == '1':
-                URL = input('Paste a Shopify link :')
+                URL = input('Paste a Shopify link : ')
                 if '?' in URL:
                     URL, y, z = URL.partition('?')
             elif choice == '2':
@@ -105,7 +105,7 @@ while True:
             elif sum(ttl) != 0:
                 print('Total stock: {:<5}'.format(sum(ttl)))
         else:
-            print('I dont know the stock 😔 :(')
+            print('STOCK 😁: ')
             print('{:<5} | {:<20} | {:10} | {:20} '.format('', 'size', 'price', 'variants'))
             for i, (size, price, variant) in enumerate(zip(sz, prc, vrnt)):
                 print('{:<5} | {:<20} | {:10} | {:20} '.format(i, size, '$'+price, variant))
